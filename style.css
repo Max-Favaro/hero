@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mochiy Pop P One', sans-serif;
+    overflow-x: hidden;
+    background: #000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #000;
+    letter-spacing: 3px;
+    min-height: 9vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+    z-index: 99;
+}
+
+.logo {
+    color: rgb(250, 230, 50);
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: azure;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #900;
+}
+
+.hamburger-bar {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-bar div {
+    width: 25px;
+    height: 3px;
+    background-color: azure;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+main {
+    display: flex;
+    background: linear-gradient(to right, black, black, transparent, transparent);
+}
+
+.background-img {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    right: -10%;
+    z-index: -1;
+}
+
+.background-img img {
+    width: 1200px;
+    height: 90vh;
+}
+
+.info-tx {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    min-width: 500px;
+    max-width: 800px;
+    color: azure;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.info-tx h1 {
+    margin: 2rem 0 1rem 1rem;
+    color: #900;
+}
+
+.info-tx p {
+    margin: 1rem 2rem 1rem 1rem;
+}
+
+.info-tx spam {
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 44%;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 91vh;
+        top: 9vh;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    /* .nav-links li {
+        opacity: 1;
+    } */
+    .hamburger-bar {
+        display: block;
+    }
+    .background-img {
+        right: 10%;
+    }
+    main {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
+    }
+    footer {
+        left: 37%;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+/* @keyframes nav-animation {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+} */
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
